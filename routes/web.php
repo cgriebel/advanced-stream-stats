@@ -28,4 +28,12 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::get('/subscription', function () {
+    return Inertia::render('Subscription');
+})->middleware(['auth', 'verified'])->name('subscription');
+
+Route::get('/subscription/add', function () {
+    return Inertia::render('Billing/Subscription');
+})->middleware(['auth', 'verified'])->name('subscription-add');
+
+require __DIR__ . '/auth.php';
